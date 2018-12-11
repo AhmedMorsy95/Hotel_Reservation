@@ -6,4 +6,4 @@ class customer(models.Model):
    password = models.CharField(max_length=100, blank = False)
    email = models.EmailField(max_length=70 , blank = False)
    mobile = models.BigAutoField((max_length=30 , blank = False)
-   black_listed = models.BooleanField(default = False)
+   blackListed = models.BooleanField(default = False)
