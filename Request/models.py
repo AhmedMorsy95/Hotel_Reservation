@@ -1,10 +1,11 @@
 from django.db import models
 from Location.models import location
-# Create your models here.
+from Owner.models import owner
 
 class request(models.Model):
     #Owner_id	hotel_location_id	hotel_name	count	stars	image
     #owner_id foreign key
+    owner_id = models.ForeignKey(owner, on_delete=models.CASCADE)
     hotel_location_id = models.ForeignKey(location, on_delete=models.CASCADE)
     hotel_name = models.CharField(max_length=100)
     singleRoomsCount = models.IntegerField(default=0)
