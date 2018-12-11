@@ -84,9 +84,11 @@ WSGI_APPLICATION = 'Hotel_Reservation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-         'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
-        },
+        'NAME': 'hotel_reservation',
+        'USER': 'root',
+        'PASSWORD': '',
+        "HOST": 'localhost',
+        'PORT':'3306',
     }
 }
 
