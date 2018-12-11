@@ -91,6 +91,16 @@ DATABASES = {
         'PORT':'3306',
     }
 }
+# db setup for us isnot all the same, so i will comment mine so that it works for you.
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#          'OPTIONS': {
+#             'read_default_file': '/etc/mysql/my.cnf',
+#         },
+#     }
+# }
+
 
 
 # Password validation
