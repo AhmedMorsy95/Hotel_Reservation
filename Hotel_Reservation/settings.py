@@ -84,11 +84,23 @@ WSGI_APPLICATION = 'Hotel_Reservation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-         'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
-        },
+        'NAME': 'hotel_reservation',
+        'USER': 'root',
+        'PASSWORD': '',
+        "HOST": 'localhost',
+        'PORT':'3306',
     }
 }
+# db setup for us isnot all the same, so i will comment mine so that it works for you.
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#          'OPTIONS': {
+#             'read_default_file': '/etc/mysql/my.cnf',
+#         },
+#     }
+# }
+
 
 
 # Password validation
@@ -115,7 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Cairo'
 
 USE_I18N = True
 
