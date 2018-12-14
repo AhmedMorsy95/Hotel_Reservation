@@ -1,0 +1,32 @@
+
+{% if search %}
+<form name = "search"   action="{% url "home" %}" method="POST">
+  {% csrf_token %}
+      {%   for all in search %}
+          <div>
+              {{ all.label_tag  }}
+              {{ all }}
+              <br></br>
+
+          </div>
+      {%   endfor %}
+
+      <button type="submit">Submit</button>
+</form>
+
+{% endif %}
+
+
+      {%   for all in hotels %}
+          <ul>
+          <br>
+              <label> Hotel name :  {{ all.name }} </label> <br></br>
+              <label> Hotel stars :{{ all.stars }} </label><br></br>
+              <label> Hotel location  Country  :  {{ all.country }}     City  :  {{ all.city }}</label> <br></br>
+              <img src= "{{ all.image.url }}"  width = "480"><br></br>
+              <form action="{% url 'reserve' all.id %} " method="POST">
+                   {% csrf_token %}
+                  <button type="submit">Reserve</button>
+              </form>
+          </ul>
+      {% endfor %}

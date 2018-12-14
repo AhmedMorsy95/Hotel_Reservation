@@ -1,5 +1,6 @@
 from django.db import models
 
+from Hotel.models import hotel
 
 # Create your models here.
 class location(models.Model):

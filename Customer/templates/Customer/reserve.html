@@ -1,0 +1,16 @@
+    {%   for all in hotels %}
+          <ul>
+          <br>
+              <label> Hotel name :  {{ all.name }} </label> <br></br>
+              <label> Hotel stars :{{ all.stars }} </label><br></br>
+              <label> Hotel location  Country  :  {{ all.country }}     City  :  {{ all.city }}</label> <br></br>
+              <img src= "{{ all.image.url }}"  width = "480"><br></br>
+          </ul>
+      {% endfor %}
+
+          <ul>
+          <br>
+              <label> Room type : {{rooms.room_type}}</label> <br></br>
+              <label> Price :{{ rooms.price }} </label><br></br>
+              <!--<labe-->
+          </ul>

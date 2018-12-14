@@ -1,7 +1,7 @@
 from django.db import models
 
 class owner(models.Model):
-    Username = models.CharField(max_length=100)
+    Username = models.CharField(max_length=100 , blank=False,default="")
     Password = models.CharField(max_length=100)
     email = models.EmailField(max_length=70)
     mobileNumber = models.CharField(max_length=15)

@@ -1,10 +1,10 @@
 from django.db import models
-from Location.models import location
 # Create your models here.
 
 class hotel(models.Model):
-    # owner id foreign key
-    location_id = models.ForeignKey(location,on_delete= models.CASCADE)
+    id = models.AutoField(primary_key=True , null=False)
+    country = models.CharField(max_length=50,default="")
+    city = models.CharField(max_length=50 , default="")
     name = models.CharField(max_length=50)
     rating = models.FloatField(null=True, blank=True, default=None)
     stars = models.IntegerField(default=0)
