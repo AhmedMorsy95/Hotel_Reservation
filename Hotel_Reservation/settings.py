@@ -87,8 +87,8 @@ DATABASES = {
         'NAME': 'hotel_reservation',
         'USER': 'root',
         'PASSWORD': '',
-        "HOST": 'localhost',
-        'PORT':'3306',
+        "HOST": '',
+        'PORT':'',
     }
 }
 # db setup for us isnot all the same, so i will comment mine so that it works for you.

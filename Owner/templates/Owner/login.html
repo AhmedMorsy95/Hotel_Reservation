@@ -1,0 +1,17 @@
+<HTML>
+<HEADER>
+    <TITLE>WELCOME TO ASHB7</TITLE>
+</HEADER>
+<BODY>
+        <FORM id="login_form" method="post" action="/Owner/login/">
+        {% csrf_token %}
+                Username:
+                <input type="text" name="username" value="" id="username" size="50" />
+            <br />
+                Password:
+                <input type="password" name="password" value="" id="password" size="50" />
+                <br />
+        <INPUT type="submit" name="login" value="submit" />
+        </FORM>
+</BODY>
+</HTML>
