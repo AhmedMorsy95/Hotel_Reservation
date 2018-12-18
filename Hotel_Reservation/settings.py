@@ -17,6 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -81,25 +82,25 @@ WSGI_APPLICATION = 'Hotel_Reservation.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'hotel_reservation',
-#         'USER': 'root',
-#         'PASSWORD': '',
-#         "HOST": 'localhost',
-#         'PORT':'3306',
-#     }
-# }
-#db setup for us isnot all the same, so i will comment mine so that it works for you.
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-         'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
-        },
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'hotel_reservation',
+         'USER': 'root',
+         'PASSWORD': '',
+         "HOST": 'localhost',
+        'PORT':'3306',
     }
-}
+ }
+#db setup for us isnot all the same, so i will comment mine so that it works for you.
+#DATABASES = {
+   # 'default': {
+   #     'ENGINE': 'django.db.backends.mysql',
+     #    'OPTIONS': {
+     #       'read_default_file': '/etc/mysql/my.cnf',
+      #  },
+   # }
+#}
 
 
 

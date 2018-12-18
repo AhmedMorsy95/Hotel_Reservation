@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+#from django.urls import path
 from django.conf.urls import url,include
 from django.conf import  settings
 from django.conf.urls.static import static
@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'admin/', admin.site.urls),
     url(r'^Customer/', include('Customer.urls')),
-    url(r'^Hotel/', include('Hotel.urls')),
+    url(r'^Request/', include('Request.urls')),
     #url(r'^Request/', include('Request.urls')),
     # url(r'^Reservation/', include('Reservation.urls')),
     # url(r'^Room/', include('Room.urls')),
@@ -31,5 +31,4 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    #urlpatterns += static(settings.STATIC_URL , root = settings.STATIC_URL)
-    urlpatterns += static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
+   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

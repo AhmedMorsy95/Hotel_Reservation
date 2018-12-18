@@ -6,7 +6,7 @@ from .customerForms import CustomerForm
 from django.shortcuts import render
 from Room.models import room
 from Customer.customerForms import forms
-from Hotel.addHotelForm import HotelForm
+from Request.addHotelForm import HotelForm
 from .searchForms import searchForm
 from Location .models import  location
 
