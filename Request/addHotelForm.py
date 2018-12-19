@@ -1,5 +1,5 @@
 from django import forms
-from Request.models import request
+from Request.models import requests
 from Owner.models import owner
 
 class HotelForm(forms.ModelForm):
@@ -7,5 +7,5 @@ class HotelForm(forms.ModelForm):
     city = forms.CharField(max_length=50)
 
     class Meta:
-        model = request
+        model = requests
         fields = ('hotel_name' , 'stars','image',)

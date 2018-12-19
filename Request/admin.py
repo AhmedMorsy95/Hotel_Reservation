@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib import messages
 
-from .models import request
+from .models import requests
 from Hotel.models import hotel
 
 newhotel=hotel()
@@ -26,9 +26,12 @@ def reject_request(modeladmin, request, queryset):
         messages.add_message(request, messages.INFO, 'Hotel '+requests.hotel_name+ ' is Successfully Rejected')
 reject_request.short_description = 'Reject Selected Requests'
 
-
 class RequestAdmin(admin.ModelAdmin):
-    list_display = ['hotel_name', 'stars', 'image', 'singleRoomsCount','singelRoomsPrice','doubleRoomsCount','doubleRoomsPrice','country','city','state']
+    list_display = ['get_name','hotel_name', 'stars', 'image', 'singleRoomsCount','singelRoomsPrice','doubleRoomsCount','doubleRoomsPrice','country','city','state',]
     actions = [accept_request, reject_request, ] 
 
-admin.site.register(request,RequestAdmin)
+    def get_name(self, obj):
+        return obj.owner_id.user.first_name
+    get_name.short_description = 'Owner Name'
+
+admin.site.register(requests,RequestAdmin)
