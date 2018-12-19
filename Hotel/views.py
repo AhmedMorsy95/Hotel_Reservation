@@ -30,8 +30,6 @@ def addHotel(request):
             return HttpResponse("Added Successfully!")
         else:
             return HttpResponse("error")
-
-
     form = HotelForm()
     return render(request,'Hotel/addHotel.html',{'form' : form})
 

@@ -6,7 +6,8 @@ class request(models.Model):
     #Owner_id	hotel_location_id	hotel_name	count	stars	image
     #owner_id foreign key
     owner_id = models.ForeignKey(owner, on_delete=models.CASCADE)
-    hotel_location_id = models.ForeignKey(location, on_delete=models.CASCADE)
+    country = models.CharField(max_length=100)
+    city=models.CharField(max_length=100 )
     hotel_name = models.CharField(max_length=100)
     singleRoomsCount = models.IntegerField(default=0)
     doubleRoomsCount = models.IntegerField(default=0)
@@ -14,3 +15,4 @@ class request(models.Model):
     doubleRoomsPrice = models.IntegerField(default=0)
     stars = models.IntegerField()
     image = models.ImageField(upload_to=None)
+    state = models.CharField(max_length=100, default='Pending')
