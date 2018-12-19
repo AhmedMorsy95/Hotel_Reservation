@@ -1,5 +1,10 @@
 
-      {%   for all in hotels %}
+  {% csrf_token %}
+  <p>
+    <A href="/Owner/logout/">logout</A>
+  </p>
+
+            {%   for all in hotels %}
           <ul>
           <br>
               <label> Request hotel_name :  {{ all.hotel_name }} </label> <br></br>

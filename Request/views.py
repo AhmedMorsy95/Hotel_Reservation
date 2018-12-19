@@ -4,7 +4,10 @@ from Owner.models import owner
 from django.http import HttpResponse
 from .addHotelForm import HotelForm
 from django.shortcuts import render
+from Hotel.models import hotel
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+
 
 @login_required(login_url='/Owner/login/')
 def addHotel(request):
@@ -28,12 +31,11 @@ def addHotel(request):
     form = HotelForm()
     return render(request,'Request/addHotel.html',{'form' : form})
 
-
- 
-
 def showHotels(request):
-    all = requests.objects.all()
-    return render(request,'Request/showHotels.html',{'hotels':all})
+     current_user= request.user
+     current_owner=owner.objects.get(user=current_user)
+     all = requests.objects.filter(owner_id=current_owner)
+     return render(request,'Request/showHotels.html',{'hotels':all})
 
 
 
