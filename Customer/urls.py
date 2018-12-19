@@ -6,6 +6,7 @@ urlpatterns = [
     # r is regex , ^ is start , $ is the end
     url(r'^$', views.index , name='index' ),
     url(r'^home/$', views.home, name='home'),
+    url(r'^home/$', views.home, name='home'),
     url(r'^reserve([0-9]+)/$', views.reserve, name='reserve'),
 
     #extract the integer

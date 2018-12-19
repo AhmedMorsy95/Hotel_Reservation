@@ -54,10 +54,17 @@ def home(request):
 
 def reserve(request,id):
     all = hotel.objects.filter(pk=id)
-    #all_rooms = room.objects.filter(hotel_id =id)
-    #rooms = all_rooms[0]
-    types = {'0':'single' , '1':"Double"}
-    return render(request,'Customer/reserve.html',{'hotels' : all ,  'types':types})
+    all_single_rooms = room.objects.filter(hotel_id=id , room_type='single')
+    all_double_rooms = room.objects.filter(hotel_id=id, room_type='double')
+    all_rooms = []
+    if all_single_rooms:
+        all_rooms.append(all_single_rooms[0])
+
+    if all_double_rooms:
+        all_rooms.append(all_double_rooms[0])
+
+
+    return render(request,'Customer/reserve.html',{'hotels' : all ,  'all_rooms':all_rooms})
 
     #return render(request,'Customer/reserve.html',{'hotels' : all , 'rooms' : rooms, 'types':types})
 

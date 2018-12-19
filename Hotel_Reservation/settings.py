@@ -16,7 +16,11 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -32,6 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'static',
     'Customer',
     'Hotel',
     'Location',
@@ -82,7 +87,7 @@ WSGI_APPLICATION = 'Hotel_Reservation.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 # DATABASES = {
-#     'default': {
+#         'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'hotel_reservation',
 #         'USER': 'root',
@@ -138,5 +143,3 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
-STATIC_URL = '/static/'
