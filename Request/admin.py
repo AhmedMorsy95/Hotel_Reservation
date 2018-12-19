@@ -14,7 +14,7 @@ def accept_request(modeladmin, request, queryset):
         if hotel.objects.filter(name=requests.hotel_name).exists():
             messages.error(request,'Hotel '+requests.hotel_name+' Already Exists')
         else:
-            newhotel=hotel(name=requests.hotel_name,country=requests.country,city=requests.city,image=requests.image,stars=requests.stars)
+            newhotel=hotel(owner_id=requests.owner_id,name=requests.hotel_name,country=requests.country,city=requests.city,image=requests.image,stars=requests.stars)
             newhotel.save()
             numberofrooms=1
             for x in range(requests.singleRoomsCount):
@@ -28,7 +28,7 @@ def accept_request(modeladmin, request, queryset):
             requests.state='Accepted'
             messages.add_message(request, messages.INFO, 'Hotel '+requests.hotel_name+ ' is Successfully Accepted')
             requests.save()  
-accept_request.short_description = 'Accept Selected Requests'
+accept_request.short_descrption = 'Accept Selected Requests'
 
 def reject_request(modeladmin, request, queryset):
     for requests in queryset:

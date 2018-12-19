@@ -4,7 +4,7 @@ from Owner.models import owner
 class requests(models.Model):
     #Owner_id	hotel_location_id	hotel_name	count	stars	image
     #owner_id foreign key
-    owner_id = models.ForeignKey(owner, on_delete=models.CASCADE)
+    owner_id = models.ForeignKey(owner, on_delete=models.CASCADE,null=False)
     country = models.CharField(max_length=100)
     city=models.CharField(max_length=100 )
     hotel_name = models.CharField(max_length=100)

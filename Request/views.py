@@ -9,11 +9,17 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
 
+class HttpResponseRedirect(object):
+    pass
+
+
 @login_required(login_url='/Owner/login/')
 def addHotel(request):
 
     if request.method == 'POST':
         data = HotelForm(request.POST , request.FILES)
+        if not request.user.is_authenticated:
+            return HttpResponseRedirect('/Owner/login/')
         if data.is_valid():
             dummy = requests()
             dummy.hotel_name = data.cleaned_data['hotel_name']

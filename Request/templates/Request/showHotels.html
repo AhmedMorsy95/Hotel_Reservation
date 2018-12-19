@@ -1,8 +1,8 @@
 
-  {% csrf_token %}
-  <p>
-    <A href="/Owner/logout/">logout</A>
-  </p>
+ <form method="POST" action="/Owner/logout/">
+       {% csrf_token %}
+     <input type="submit" value="logout">
+ </form>
 
             {%   for all in hotels %}
           <ul>

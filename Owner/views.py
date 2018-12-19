@@ -1,12 +1,14 @@
 from django.contrib.auth import login, authenticate,logout
 from django.shortcuts import render, redirect
-from Owner.forms import SignUpForm
-from django.http import HttpResponse,HttpResponsePermanentRedirect
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 
-def logout_Page(request):
-  logout(request)
-  return HttpResponsePermanentRedirect('/Owner/login/')
+from Owner.forms import SignUpForm
+from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect
+from django.urls import  reverse
+
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+from django.contrib.auth.views import auth_logout
+
+
 def login_Page(request):
     if request.method == 'POST':
           username = request.POST['username']
@@ -21,6 +23,12 @@ def login_Page(request):
     else:
         # the login is a  GET request, so just show the user the login form.
         return render(request,'Owner/login.html', {})
+
+
+def logout_Page(request):
+   if request.method== "POST":
+     logout(request)
+     return HttpResponseRedirect("/Owner/login/")
 
 
 def signup(request):
