@@ -1,0 +1,23 @@
+{% block content %}
+    <h2>Login</h2>
+{#    {% if form.errors %}#}
+{#        <p style="color: red">Email of Password don't match</p>#}
+{#    {% endif %}#}
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}<br>
+                {% for error in field.errors%}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+                {% if field.help_text %}
+                    <small style="color: gray">{{ field.help_text }}</small>
+                {% endif %}
+            </p>
+        {% endfor %}
+        <button type="submit">Submit</button>
+        <a href="{% url 'signup'  %}" style="color: gray">New? Sign up</a>
+    </form>
+{% endblock %}

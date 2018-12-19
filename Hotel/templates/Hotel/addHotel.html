@@ -1,0 +1,17 @@
+<h1>{{ fullname }}</h1>
+<form name = "form"   action="{% url "addHotel" %}" method="POST" enctype = "multipart/form-data" novalidate>
+  {% csrf_token %}
+    {% for x in form1 %}
+        {{ x.name }}
+    {% endfor %}
+    {%   for all in form %}
+          <div>
+              {{ all.label_tag  }}
+              {{ all }}
+              <br></br>
+
+          </div>
+      {%   endfor %}
+
+      <button type="submit">Submit</button>
+</form>
