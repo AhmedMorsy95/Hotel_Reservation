@@ -20,6 +20,12 @@ def addHotel(request):
             dummy.stars = data.cleaned_data['stars']
             dummy.image = data.cleaned_data['image']
             dummy.country = data.cleaned_data['country']
+            dummy.singleRoomsCount=data.cleaned_data['singleRoomsCount']
+            dummy.singelRoomsPrice=data.cleaned_data['singleRoomsPrice']
+            dummy.doubleRoomsCount=data.cleaned_data['doubleRoomsCount']
+            dummy.singelRoomsPrice=data.cleaned_data['doubleRoomsPrice']
+            dummy.imageS = data.cleaned_data['imageS']
+            dummy.imageD = data.cleaned_data['imageD']
             dummy.city = data.cleaned_data['city']
             current_user= request.user
             dummy.owner_id = owner.objects.get(user=current_user)

@@ -8,4 +8,4 @@ class HotelForm(forms.ModelForm):
 
     class Meta:
         model = requests
-        fields = ('hotel_name', 'stars', 'image', 'singleRoomsCount','singelRoomsPrice','doubleRoomsCount','doubleRoomsPrice','country','city',)
+        fields = ('hotel_name', 'stars', 'image', 'singleRoomsCount','singleRoomsPrice','doubleRoomsCount','doubleRoomsPrice','imageS','imageD','country','city',)
