@@ -1,9 +1,10 @@
 from django.db import models
 from Location.models import location
+from Owner.models import owner
 # Create your models here.
 
 class hotel(models.Model):
-    # owner id foreign key
+    owner_id = models.ForeignKey(owner, on_delete=models.CASCADE)
     country=models.CharField(max_length=50, null=True)
     city=models.CharField(max_length=50, null=True)
     name = models.CharField(max_length=50)

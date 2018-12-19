@@ -6,7 +6,7 @@ from .addHotelForm import HotelForm
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-@login_required
+@login_required(login_url='/Owner/login/')
 def addHotel(request):
 
     if request.method == 'POST':
