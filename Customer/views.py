@@ -13,10 +13,8 @@ from django.http import HttpResponse
 from .customerForms import CustomerForm
 from Room.models import room
 from Customer.customerForms import forms
-from Hotel.addHotelForm import HotelForm
 from .searchForms import searchForm
 from django.contrib import messages
-from Location .models import  location
 from django.utils.timezone import utc
 from Room.models import room
 from Reservation.models import Reservations

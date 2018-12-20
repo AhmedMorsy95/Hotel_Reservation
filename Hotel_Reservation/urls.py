@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'admin/', admin.site.urls),
     #url(r'^Customer/', include('Customer.urls')),
     url(r'^Request/', include('Request.urls')),
-    url(r'^Owner/',include('Owner.urls'))
+    url(r'^Owner/',include('Owner.urls')),
     url(r'^Customer/', include('Customer.urls')),
     url(r'^Hotel/', include('Hotel.urls')),
     #url(r'^Request/', include('Request.urls')),

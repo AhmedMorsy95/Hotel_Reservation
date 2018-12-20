@@ -1,7 +1,6 @@
 from django.db import models
 from Customer.models import customer
 from Room.models import room
-from Hotel.models import hotel
 
 class Reservations(models.Model):
    # hotel_id = models.ForeignKey(hotel,on_delete=models.CASCADE , null=True)

@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from django.conf.urls import url,include
 from . import views
-from Hotel.views import showHotels, addHotel
+from Hotel.views import showHotels
 from Reservation.views import reserve_info
 
 urlpatterns = [

@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'static',
     'Customer',
     'Hotel',
-    'Location',
     'Owner',
     'Request',
     'Reservation',
