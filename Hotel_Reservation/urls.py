@@ -28,7 +28,6 @@ urlpatterns = [
     url(r'^Room/', include('Room.urls')),
     # url(r'^Owner/', include('Owner.urls')),
     # url(r'^Location/', include('Location.urls')),
-    url(r'^accounts/', include('django.contrib.auth.urls')),  # new
 
 ]
 

@@ -6,7 +6,13 @@
 
 <!--&lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
-
+{% if messages %}
+    {% for message in messages%}
+    <script>
+        alert('{{ message }}')
+    </script>
+    {% endfor %}
+{% endif %}
 <!--{% if search %}-->
 <!--<form name = "search"   action="{% url "home" %}" method="POST">-->
   <!--{% csrf_token %}-->
@@ -93,12 +99,12 @@
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
       <div class="masthead">
-        <h3 class="text-muted">Booking</h3>
+        <h2 class="text-muted">Booking{{ username }}</h2>
         <nav>
           <ul class="nav nav-justified">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">Projects</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="{% url 'show_reservations'%} ">My Reservations</a></li>
             <li><a href="#">Downloads</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
@@ -114,7 +120,9 @@
 
       <!-- Example row of columns -->
       <div class="row">
-        {%   for all in hotels %}
+
+
+          {%   for all in hotels %}
           <div class="col-lg-4">
           <h2>{{ all.name }}</h2>
 
@@ -139,7 +147,3 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
-
-
-
-

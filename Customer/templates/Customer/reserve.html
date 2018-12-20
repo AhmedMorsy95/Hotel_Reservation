@@ -1,4 +1,5 @@
-    <!--{%   for all in hotels %}-->
+<h1>{{ username }}</h1>
+ <!--{%   for all in hotels %}-->
               <!--<h1>        {{ all.name }} </h1> <br></br>-->
       <!--{% endfor %}-->
 
@@ -93,7 +94,7 @@
 
               <img src= "{{ all.image.url }}"  width = "250"> <br></br>
            <!--<form action="{% url 'reserve' all.id %} " method="POST">-->
-          <p><a href = "{% url 'reserve' all.id %} " class="btn btn-primary"   role="button" >Book &raquo;</a></p>
+          <p><a href = "{% url 'reserve_room' all.id %} " class="btn btn-primary"   role="button" >reserve a room  &raquo;</a></p>
               <h3> Price : {{ all.price}}$ </h3>
            <!--</form>-->
           </div>
