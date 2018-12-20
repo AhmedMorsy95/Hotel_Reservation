@@ -1,5 +1,4 @@
 from django.db import models
-from Location.models import location
 from Owner.models import owner
 # Create your models here.
 
