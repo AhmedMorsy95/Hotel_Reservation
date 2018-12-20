@@ -1,7 +1,10 @@
-<HTML>
-<HEADER>
-    <TITLE>WELCOME TO ASHB7</TITLE>
-</HEADER>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Owner/style.css' %}">
+
+{% block content %}
+<div class="header">
+    <h2>Login</h2>
+ </div>
 <BODY>
         <FORM id="login_form" method="post" action="/Owner/login/">
         {% csrf_token %}
@@ -11,7 +14,7 @@
                 Password:
                 <input type="password" name="password" value="" id="password" size="50" />
                 <br />
-        <INPUT type="submit" name="login" value="submit" />
+        <INPUT type="submit" name="login" value="submit" class="btn" />
         </FORM>
 </BODY>
-</HTML>
+{% endblock %}

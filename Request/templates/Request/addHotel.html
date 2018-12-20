@@ -1,14 +1,24 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Request/style.css' %}">
 
-<form name = "form"   action="{% url "addHotel" %}" method="POST" enctype = "multipart/form-data" novalidate>
-  {% csrf_token %}
-      {%   for all in form %}
-          <div>
-              {{ all.label_tag  }}
-              {{ all }}
-              <br></br>
+{% block content %}
 
-          </div>
-      {%   endfor %}
+	<div class="header">
+    	<h2>Add Your Hotel</h2>
+ 	</div>
+	<form name = "form"   action="{% url "addHotel" %}" method="POST" enctype = "multipart/form-data" novalidate>
+  	{% csrf_token %}
+    	  {%   for all in form %}
+        	  <div>
+            	  {{ all.label_tag  }}
+              	{{ all }}
+              	<br></br>
 
-      <button type="submit">Submit</button>
-</form>
+	          </div>
+    	  {%   endfor %}
+
+      	<button type="submit" class="btn">Submit</button>
+	</form>
+{% endblock %}
+
+

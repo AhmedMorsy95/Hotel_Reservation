@@ -1,0 +1,47 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+    background: white url("images/hotel.jpg") no-repeat;
+    color: white;
+}
+
+.header {
+  width: 22%;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  margin-right: 150px;
+  margin-left: 80px;
+  color: white;
+  background: rgb(95,158,160,0.4);
+  text-align: center;
+  border: 1px solid #B0C4DE;
+  border-bottom: none;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
+}
+
+form, .content {
+  width: 22%;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  margin-right: 150px;
+  margin-left: 80px;
+  padding: 20px;
+  color: white;
+  border: 1px solid #B0C4DE;
+  background: rgba(0,0,0,0.4);
+  border-radius: 0px 0px 10px 10px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  background: #5F9EA0;
+  border: none;
+  border-radius: 5px;
+  margin-left: 300px;
+}
