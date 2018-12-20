@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+
 from django.shortcuts import render
 from Request.models import requests
 from Owner.models import owner
@@ -48,7 +50,4 @@ def showHotels(request):
      current_owner=owner.objects.get(user=current_user)
      all = requests.objects.filter(owner_id=current_owner)
      return render(request,'Request/showHotels.html',{'hotels':all})
-
-
-
 

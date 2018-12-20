@@ -15,17 +15,19 @@ def addHotel(request):
             dummy.name = data.cleaned_data['name']
             dummy.stars = data.cleaned_data['stars']
             dummy.image = data.cleaned_data['image']
-
-            getLocationID = location.objects.filter(country=data.cleaned_data['country'],city=data.cleaned_data['city'])
-            # insert a new location
-            if not getLocationID:
-                newLocation = location()
-                newLocation.country=data.cleaned_data['country']
-                newLocation.city=data.cleaned_data['city']
-                newLocation.save()
-             #get thisn location id
-            getLocationID = location.objects.get(country=data.cleaned_data['country'], city=data.cleaned_data['city'])
-            dummy.location_id = getLocationID
+            dummy.country = data.cleaned_data['country']
+            dummy.city = data.cleaned_data['city']
+            # getLocationID = location.objects.filter(country=data.cleaned_data['country'],city=data.cleaned_data['city'])
+            # # insert a new location
+            # if not getLocationID:
+            #     newLocation = location()
+            #     newLocation.country=data.cleaned_data['country']
+            #     newLocation.city=data.cleaned_data['city']
+            #     newLocation.save()
+            #  #get thisn location id
+            # getLocationID = location.objects.get(country=data.cleaned_data['country'], city=data.cleaned_data['city'])
+            # dummy.location_id = getLocationID
+            # dummy.save()
             dummy.save()
             return HttpResponse("Added Successfully!")
         else:

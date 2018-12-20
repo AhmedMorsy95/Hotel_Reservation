@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Hotel_Reservation.iml" filepath="$PROJECT_DIR$/.idea/Hotel_Reservation.iml" />
+<<<<<<< HEAD
+=======
+      <module fileurl="file://$USER_HOME$/Downloads/Hotel_Reservation_System/.idea/Hotel_Reservation_System.iml" filepath="$USER_HOME$/Downloads/Hotel_Reservation_System/.idea/Hotel_Reservation_System.iml" />
+>>>>>>> 7ca7abb90d4721f67d01adcb818294cd58caf2b8
     </modules>
   </component>
 </project>

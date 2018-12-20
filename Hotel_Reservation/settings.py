@@ -16,8 +16,12 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
 
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -33,6 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'static',
     'Customer',
     'Hotel',
     'Location',
@@ -82,25 +87,30 @@ WSGI_APPLICATION = 'Hotel_Reservation.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#         'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'hotel_reservation',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         "HOST": 'localhost',
+#         'PORT':'3306',
+#     }
+# }
+#db setup for us isnot all the same, so i will comment mine so that it works for you.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hotel_reservation',
         'USER': 'root',
         'PASSWORD': '',
-        "HOST": '',
-        'PORT':'',
+        "HOST": 'localhost',
+        'PORT':'3306',
+       #  'OPTIONS': {
+        #    'read_default_file': '/etc/mysql/my.cnf',
+        #},
     }
 }
-# db setup for us isnot all the same, so i will comment mine so that it works for you.
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#          'OPTIONS': {
-#             'read_default_file': '/etc/mysql/my.cnf',
-#         },
-#     }
-# }
 
 
 
@@ -140,5 +150,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/Request/showHotels'

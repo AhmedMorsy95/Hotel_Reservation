@@ -1,0 +1,115 @@
+<h1>{{ username }}</h1>
+ <!--{%   for all in hotels %}-->
+              <!--<h1>        {{ all.name }} </h1> <br></br>-->
+      <!--{% endfor %}-->
+
+      <!--{%for rooms in all_rooms %}-->
+          <!--<ul>-->
+          <!--<br>-->
+              <!--<label> Room type : {{rooms.room_type}}</label> <br></br>-->
+              <!--<label> Price :{{ rooms.price }} </label><br></br>-->
+              <!--<img src= "{{ rooms.image.url }}"  width = "480"><br></br>-->
+
+          <!--</ul>-->
+      <!--{%endfor%}-->
+
+ <!---->
+
+{% load static %}
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Justified Nav Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{%static 'bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{%static 'ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{%static 'justified-nav.css' %}" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h3 class="text-muted">Booking</h3>
+        <nav>
+          <ul class="nav nav-justified">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        {%for all in hotels %}
+          <h1>{{all.name}}</h1>
+          <img src= "{{ all.image.url }}"  width = "300"> <br></br>
+        {%endfor%}
+        <!--<p><a class="btn btn-lg btn-success" href="#" role="button">Filter Hotels</a></p>-->
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        {%   for all in all_rooms %}
+          <div class="col-lg-4">
+          <h2>{{ all.room_type }}</h2>
+
+              <img src= "{{ all.image.url }}"  width = "250"> <br></br>
+           <!--<form action="{% url 'reserve' all.id %} " method="POST">-->
+          <p><a href = "{% url 'reserve_room' all.id %} " class="btn btn-primary"   role="button" >reserve a room  &raquo;</a></p>
+              <h3> Price : {{ all.price}}$ </h3>
+           <!--</form>-->
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; 2018 ashba7 el DB, Team 10.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

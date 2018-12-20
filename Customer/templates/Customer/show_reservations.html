@@ -1,0 +1,11 @@
+<h1> hello {{name}} </h1>
+
+{% for i in table %}
+ <div>
+ <h2> {{i.from_date}} {{i.to_date}} {{hotel}} {{i.id}}<h2>
+ <form action="{% url 'confirm' i.id%} " method="POST">
+                   {% csrf_token %}
+                  <button type="submit">Confirm</button>
+ </form>
+ </div>
+{%endfor%}

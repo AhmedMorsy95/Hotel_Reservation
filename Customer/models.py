@@ -7,3 +7,4 @@ class customer(models.Model):
    email = models.EmailField(max_length=70, blank=False)
    mobile = models.BigIntegerField(blank=False)
    black_listed = models.BooleanField(default=False)
+

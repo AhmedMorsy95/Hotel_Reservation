@@ -24,8 +24,15 @@ urlpatterns = [
     #url(r'^Customer/', include('Customer.urls')),
     url(r'^Request/', include('Request.urls')),
     url(r'^Owner/',include('Owner.urls'))
+    url(r'^Customer/', include('Customer.urls')),
+    url(r'^Hotel/', include('Hotel.urls')),
+    #url(r'^Request/', include('Request.urls')),
+    # url(r'^Reservation/', include('Reservation.urls')),
+    url(r'^Room/', include('Room.urls')),
+    # url(r'^Owner/', include('Owner.urls')),
+    # url(r'^Location/', include('Location.urls')),
 ]
 
 if settings.DEBUG:
-    #urlpatterns += static(settings.STATIC_URL , root = settings.STATIC_URL)
+    urlpatterns += static(settings.STATIC_URL , document_root = settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
