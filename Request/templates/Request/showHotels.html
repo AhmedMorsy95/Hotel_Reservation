@@ -1,17 +1,29 @@
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'Request/showstyle.css' %}">
+<div class="header">
+<h1>Requested Hotels</h1>
+<form method="POST" action="/Owner/logout/">
+  {% csrf_token %}
+  <input type="submit" value="logout" class="btn">
+</form>
+</div>
 
- <form method="POST" action="/Owner/logout/">
-       {% csrf_token %}
-     <input type="submit" value="logout">
- </form>
 
-            {%   for all in hotels %}
-          <ul>
-          <br>
-              <label> Request hotel_name :  {{ all.hotel_name }} </label> <br></br>
-              <label> Request stars :{{ all.stars }} </label><br></br>
-              <label> Request  country  :  {{ all.country }}  </label> <br></br>
-              <label> Request city  :  {{ all.city }}</label> <br></br>
-              <img src= "{{ all.image.url }}"  width = "480"><br></br>
-          </li>
-          </ul>
-      {% endfor %}
+<div class="row">
+    {%   for all in hotels %}
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img class="right"src= "{{ all.image.url }}" style="width:100%;height:100%;">
+        </div>
+        <div class="flip-card-back">
+          <h1>Hotel Name :  {{ all.hotel_name }}</h1>
+          <p>Stars :{{ all.stars }}</p>
+          <p>Country  :  {{ all.country }}</p>
+          <p>  City  :  {{ all.city }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>

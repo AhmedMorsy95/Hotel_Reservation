@@ -6,6 +6,7 @@
 	<div class="header">
     	<h2>Add Your Hotel</h2>
  	</div>
+ 	<div class="form">
 	<form name = "form"   action="{% url "addHotel" %}" method="POST" enctype = "multipart/form-data" novalidate>
   	{% csrf_token %}
     	  {%   for all in form %}
@@ -19,6 +20,7 @@
 
       	<button type="submit" class="btn">Submit</button>
 	</form>
+	<div>
 {% endblock %}
 
 
