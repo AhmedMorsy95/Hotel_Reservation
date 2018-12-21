@@ -13,3 +13,4 @@ class hotel(models.Model):
     image = models.ImageField(upload_to='media')
     rates_count = models.IntegerField(default=0)
     rates_sum = models.IntegerField(default=0)
+    is_suspended = models.IntegerField(default=0)
