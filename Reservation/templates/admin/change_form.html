@@ -1,0 +1,17 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+
+{% block object-tools-items %}
+{{ block.super }}
+    <!--<head>-->
+    <!--<link rel="stylesheet" href="admin.css">-->
+    <!--</head>-->
+    <form method="post">
+        <div>
+            <input type="text">
+        </div>
+        <div class="submit-row">
+                <input type="submit" name="Submit" placeholder="Submit">
+        </div>
+    </form>
+{% endblock %}

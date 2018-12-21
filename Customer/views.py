@@ -20,7 +20,7 @@ from Location .models import  location
 from django.utils.timezone import utc
 from Room.models import room
 from Reservation.models import Reservations
-
+from testing.helper_testing import fakeTime
 def index(request):
 
     if request.method == 'POST':
@@ -40,6 +40,8 @@ def index(request):
     return render(request,'Customer/index.html',{'form' : form,'username':name})
 
 def home(request):
+    print(fakeTime(20))
+
     all = hotel.objects.all()
     search = searchForm()
     if request.method == 'POST':
