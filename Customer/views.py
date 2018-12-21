@@ -13,12 +13,14 @@ from django.http import HttpResponse
 from .customerForms import CustomerForm
 from Room.models import room
 from Customer.customerForms import forms
+from Hotel.addHotelForm import HotelForm
 from .searchForms import searchForm
 from django.contrib import messages
+from Location .models import  location
 from django.utils.timezone import utc
 from Room.models import room
 from Reservation.models import Reservations
-
+from testing.helper_testing import fakeTime
 def index(request):
 
     if request.method == 'POST':
@@ -53,7 +55,8 @@ def home(request):
             starsfield = data.cleaned_data['stars']
             if starsfield:
                 all = all.filter(stars = starsfield)
-            return render(request, 'Customer/home.html', {'hotels': all})
+            name = User.objects.get(username=request.user.username)
+            return render(request, 'Customer/home.html', {'hotels': all, 'username':name})
     name = User.objects.get(username=request.user.username)
     return render(request,'Customer/home.html',{'hotels' : all, 'search' : search, 'username':name})
 
@@ -138,3 +141,6 @@ def confirm(request,reservation_id):
     return redirect('show_reservations')
 
 
+def search(request):
+    search = searchForm()
+    return render(request, 'Customer/search.html', {'search': search})
