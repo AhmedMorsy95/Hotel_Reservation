@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99097ef-17af-4d8e-9d2e-bc5a6b6d767a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Customer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Customer/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/Reserve_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/Reserve_Form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reservation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Reservation/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/helper_testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/helper_testing.py" afterDir="false" />
       <change beforePath="$USER_HOME$/Downloads/Hotel_Reservation_System/Hotel_Reservation_System/__init__.py" beforeDir="false" />
       <change beforePath="$USER_HOME$/Downloads/Hotel_Reservation_System/Hotel_Reservation_System/settings.py" beforeDir="false" />
       <change beforePath="$USER_HOME$/Downloads/Hotel_Reservation_System/Hotel_Reservation_System/urls.py" beforeDir="false" />
@@ -251,18 +246,17 @@
       <workItem from="1545254221682" duration="94000" />
       <workItem from="1545255184189" duration="1087000" />
       <workItem from="1545256388696" duration="5249000" />
-      <workItem from="1545299626138" duration="18529000" />
+      <workItem from="1545299626138" duration="18632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48179000" />
+    <option name="totallyTimeSpent" value="48282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22346368" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22346368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -276,7 +270,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
