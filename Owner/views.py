@@ -16,7 +16,7 @@ def login_Page(request):
           user = authenticate(username=username, password=password)
           if user is not None:
                   login(request, user)
-                  return redirect('http://127.0.0.1:8000/Hotel/showHotels')
+                  return redirect('http://127.0.0.1:8000/Request/showHotels')
           else:
               # Return an 'invalid login' error message.
               return render(request,'Owner/login.html')
