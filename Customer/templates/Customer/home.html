@@ -103,8 +103,8 @@
         <nav>
           <ul class="nav nav-justified">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="{% url 'show_reservations'%} ">My Reservations</a></li>
+            <li><a href="#">Show Reservations</a></li>
+            <li><a href="{% url 'show_reservations'%} ">Confirm Reservations</a></li>
             <li><a href="#">Downloads</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
@@ -115,7 +115,7 @@
       <!-- Jumbotron -->
       <div class="jumbotron">
         <h1>Book your Hotel</h1>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Filter Hotels</a></p>
+        <p><a class="btn btn-lg btn-success" href="{% url 'search' %} " role="button">Filter Hotels</a></p>
       </div>
 
       <!-- Example row of columns -->
