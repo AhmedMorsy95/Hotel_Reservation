@@ -13,14 +13,11 @@ from django.http import HttpResponse
 from .customerForms import CustomerForm
 from Room.models import room
 from Customer.customerForms import forms
-from Hotel.addHotelForm import HotelForm
 from .searchForms import searchForm
 from django.contrib import messages
-from Location .models import  location
 from django.utils.timezone import utc
 from Room.models import room
 from Reservation.models import Reservations
-from testing.helper_testing import fakeTime
 def index(request):
 
     if request.method == 'POST':
@@ -97,7 +94,7 @@ def user_login(request):
 def logged_in(request):
     return HttpResponseRedirect('showHotel/')
 
-def signup(request):
+def signup2(request):
     form = Register()
     if request.method == 'POST':
         form = Register(request.POST)
@@ -115,7 +112,7 @@ def signup(request):
                 user_data.save()
                 return redirect('login')
             else:
-                return redirect('signup')
+                return redirect('signup2')
     return render(request, 'Customer/signup.html', {'form': form})
 
 def reserve_room(request,room_id):
@@ -144,3 +141,12 @@ def confirm(request,reservation_id):
 def search(request):
     search = searchForm()
     return render(request, 'Customer/search.html', {'search': search})
+
+
+def extend_stay(request):
+    name_ = User.objects.get(username=request.user.username)
+    id = customer.objects.filter(user_name=name_)
+    cur_id = id[0].id
+    my_reservation = Reservations.objects.filter(customer_id=cur_id)
+
+    return render(request, 'Customer/extend.html', {'all': my_reservation})

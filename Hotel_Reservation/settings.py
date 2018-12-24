@@ -48,12 +48,14 @@ INSTALLED_APPS = [
     'Request',
     'Reservation',
     'Room',
+    'testing',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -90,30 +92,29 @@ WSGI_APPLICATION = 'Hotel_Reservation.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+         'OPTIONS': {
+            'read_default_file': '/etc/mysql/my.cnf',
+        },
+    }
+}
+
+#db setup for us isnot all the same, so i will comment mine so that it works for you.
 # DATABASES = {
-#         'default': {
+#     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'hotel_reservation',
 #         'USER': 'root',
 #         'PASSWORD': '',
 #         "HOST": 'localhost',
 #         'PORT':'3306',
+#        #  'OPTIONS': {
+#         #    'read_default_file': '/etc/mysql/my.cnf',
+#         #},
 #     }
 # }
-#db setup for us isnot all the same, so i will comment mine so that it works for you.
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hotel_reservation',
-        'USER': 'root',
-        'PASSWORD': '',
-        "HOST": 'localhost',
-        'PORT':'3306',
-       #  'OPTIONS': {
-        #    'read_default_file': '/etc/mysql/my.cnf',
-        #},
-    }
-}
 
 
 

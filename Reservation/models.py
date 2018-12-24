@@ -9,3 +9,10 @@ class Reservations(models.Model):
     confirmed = models.BooleanField(default=False)
     from_date = models.DateField('Date')
     to_date = models.DateField('Date')
+
+class Extend_Stay(models.Model):
+    customer_id = models.ForeignKey(customer, on_delete=models.CASCADE)
+    room_id = models.ForeignKey(room, on_delete=models.CASCADE)
+    confirmed = models.BooleanField(default=False)
+    from_date = models.DateField('Date')
+    to_date = models.DateField('Date')

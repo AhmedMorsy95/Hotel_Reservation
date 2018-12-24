@@ -1,6 +1,6 @@
-              {% block content %}
+{% block content %}
     <h2>Sign up</h2>
-    <form method="post">
+    <form action="{% url "signup2" %}" method="post">
         {% csrf_token %}
         {% for field in form %}
             <p>

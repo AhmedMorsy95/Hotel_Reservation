@@ -1,8 +1,6 @@
 from django.contrib import admin
 from django.contrib import messages
 from .models import hotel
-from Hotel_Reservation.Owner.models import owner
-
 
 def SuspendThisHotel(modeladmin, request, queryset):
     for hotels in queryset:

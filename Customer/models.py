@@ -8,3 +8,5 @@ class customer(models.Model):
    mobile = models.BigIntegerField(blank=False)
    black_listed = models.BooleanField(default=False)
 
+   def __self__(self):
+     return self.user_name

@@ -22,9 +22,11 @@ from Reservation.views import reserve_info
 
 urlpatterns = [
 
+    path('extend_stay/', views.extend_stay, name='extend_stay'),
     re_path(r'^confirm([0-9]+)/$', views.confirm, name='confirm'),
     path('show_reservations/', views.show_reservations, name='show_reservations'),
-    path('signup/', views.signup, name='signup'),
+    path('search/', views.search, name='search'),
+    path('signup2/', views.signup2, name='signup2'),
     path('', views.user_login, name='login'),
     path('show/', showHotels, name='showHotels'),
     re_path(r'^Room/', include('Room.urls')),

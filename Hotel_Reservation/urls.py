@@ -26,10 +26,10 @@ urlpatterns = [
     url(r'^Owner/',include('Owner.urls')),
     url(r'^Customer/', include('Customer.urls')),
     url(r'^Hotel/', include('Hotel.urls')),
-    #url(r'^Request/', include('Request.urls')),
-    # url(r'^Reservation/', include('Reservation.urls')),
+    url(r'^Request/', include('Request.urls')),
+    url(r'^Reservation/', include('Reservation.urls')),
     url(r'^Room/', include('Room.urls')),
-    # url(r'^Owner/', include('Owner.urls')),
+    url(r'^Owner/', include('Owner.urls')),
     # url(r'^Location/', include('Location.urls')),
 ]
 
