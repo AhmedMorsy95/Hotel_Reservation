@@ -41,6 +41,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_heroku',		
     'Main',
     'static',
     'Customer',
@@ -155,3 +156,5 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+import django_heroku
+django_heroku.settings(locals())
