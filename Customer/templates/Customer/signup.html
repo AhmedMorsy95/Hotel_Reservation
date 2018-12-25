@@ -1,16 +1,18 @@
-{% block content %}
-    <h2>Sign up</h2>
-    <form action="{% url "signup2" %}" method="post">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'Customer/style.css' %}">
+              {% block content %}
+    <h2 class="header">Sign up</h2>
+    <form method="post">
         {% csrf_token %}
         {% for field in form %}
             <p>
                 {{ field.label_tag }}<br>
                 {{ field }}
                 {% if field.help_text %}
-                    <small style="color: gray">{{ field.help_text }}</small>
+                    <small style="color: blue">{{ field.help_text }}</small>
                 {% endif %}
             </p>
         {% endfor %}
-        <button type="submit">Sign up</button>
+        <button type="submit" class="btn">Sign up</button>
     </form>
 {% endblock %}

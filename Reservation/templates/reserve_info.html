@@ -1,3 +1,10 @@
+{#<head>#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>#}
+{#    <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet" type="text/css"/>#}
+{#    <script src="{{ STATIC_URL }}js/bootstrap.js"></script>#}
+{#    {{ form.media }}#}
+{##}
+{#</head>#}
 {% block content %}
     <h1>Reserve</h1>
     <form method="post" action="{% url 'reserve_info' %}">
@@ -14,3 +21,4 @@
         <button type="submit">Reserve</button>
     </form>
 {% endblock %}
+{#</body>#}

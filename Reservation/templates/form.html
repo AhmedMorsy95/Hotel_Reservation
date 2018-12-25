@@ -1,0 +1,12 @@
+{% block content %}
+    <h2>Advance Days</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{ field }}<br>
+            </p>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

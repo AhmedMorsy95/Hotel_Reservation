@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 
 from Owner.forms import SignUpForm
 from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect
+from Reservation.models import Extend_Stay
 from django.urls import  reverse
 
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
@@ -16,7 +17,7 @@ def login_Page(request):
           user = authenticate(username=username, password=password)
           if user is not None:
                   login(request, user)
-                  return redirect('http://127.0.0.1:8000/Request/showHotels')
+                  return redirect('http://127.0.0.1:8000/Owner/home')
           else:
               # Return an 'invalid login' error message.
               return render(request,'Owner/login.html')
@@ -42,8 +43,20 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=raw_password)
             login(request, user)
-            return redirect('http://127.0.0.1:8000/Hotel/showHotels')
+            return redirect('http://127.0.0.1:8000/Owner/home')
     else:
         form = SignUpForm()
     return render(request, 'Owner/signup.html', {'form': form})
+def home(request):
+    return render (request, 'Owner/home.html')
+def direct(request):
+     return redirect('http://127.0.0.1:8000/Request/addHotel')
 
+
+def rdirect(request):
+    return redirect('http://127.0.0.1:8000/Request/showHotels')
+
+# def show_extension_requests(request):
+#     all = Extend_Stay.objects.all()
+#
+#     return render(request, 'Owner/show_extension_requests.html', {'all': all})

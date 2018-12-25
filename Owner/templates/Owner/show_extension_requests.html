@@ -1,0 +1,10 @@
+{% for i in all %}
+<h2> To date :  {{i.to_date}} </h2>
+<h2> Reservation id :   {{i.reservation_id.id}}</h2>
+<form action="{% url 'extend_action' %} " method="POST">
+                   {% csrf_token %}
+                  <button type="submit">Accept</button>
+                  <button type="submit">Reject</button>
+                  <input type="hidden" name="id" value={{i.id}}>
+</form>
+{% endfor %}

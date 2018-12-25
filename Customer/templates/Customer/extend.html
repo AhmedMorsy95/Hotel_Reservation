@@ -1,3 +1,9 @@
 {% for i in all %}
-<h2> {{ i.to_date }} <h2>
+<h2> {{ i.from_date }} {{ i.to_date}} <h2>
+<form action="{% url 'extend' %} " method="POST">
+                   {% csrf_token %}
+    <input type="text" placeholder="enter number of days"  name="days">
+                  <button type="submit">Confirm</button>
+                  <input type="hidden" name="id" value={{i.id}}>
+ </form>
 {% endfor %}

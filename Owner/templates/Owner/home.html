@@ -1,0 +1,23 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Owner/home.css' %}">
+{% block content %}
+<div class="container">
+ <div class="header">
+    <h1>*Welcome*</h1>
+    <h1>Please choose your required action</h1>
+      </div>
+      <div style="text-align:center;">
+      <!--<button type="submit" class="btn" href = "{% url 'direct' %}" >Add Hotel</button> -->
+          <p><a href = "{% url 'direct' %} " class="btn "   role="button" >Add Hotel &raquo;</a></p>
+           </div>
+     <div style="text-align:center;">
+           <p><a href = "{% url 'rdirect' %} " class="btn "   role="button" >Show Hotel &raquo;</a></p>
+
+
+    </div>
+
+
+
+    </div>
+  </div>
+{% endblock %}

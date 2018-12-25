@@ -22,6 +22,7 @@ from Reservation.views import reserve_info
 
 urlpatterns = [
 
+    path('extend/', views.extend, name='extend'),
     path('extend_stay/', views.extend_stay, name='extend_stay'),
     re_path(r'^confirm([0-9]+)/$', views.confirm, name='confirm'),
     path('show_reservations/', views.show_reservations, name='show_reservations'),

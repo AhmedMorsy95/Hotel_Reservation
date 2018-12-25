@@ -17,7 +17,9 @@ from .searchForms import searchForm
 from django.contrib import messages
 from django.utils.timezone import utc
 from Room.models import room
-from Reservation.models import Reservations
+from Reservation.models import Reservations, Extend_Stay
+import moment
+
 def index(request):
 
     if request.method == 'POST':
@@ -147,6 +149,21 @@ def extend_stay(request):
     name_ = User.objects.get(username=request.user.username)
     id = customer.objects.filter(user_name=name_)
     cur_id = id[0].id
-    my_reservation = Reservations.objects.filter(customer_id=cur_id)
-
+    now = moment.now().format("YYYY-M-D")
+    my_reservation = Reservations.objects.filter(customer_id=cur_id,from_date__lte = now,to_date__gte=now)
     return render(request, 'Customer/extend.html', {'all': my_reservation})
+
+def extend(request):
+    if request.method == 'POST':
+        days = request.POST.get('days')
+        r_id = request.POST.get('id')
+        now = moment.now().format("YYYY-M-D")
+        name_ = User.objects.get(username=request.user.username)
+        id = customer.objects.filter(user_name=name_)
+        cur_id = id[0].id
+        my_reservation = Reservations.objects.get(pk=r_id)
+        extend_request = Extend_Stay()
+        extend_request.reservation_id = my_reservation
+        extend_request.to_date = moment.date(my_reservation.to_date).add(days=int(days)).format("YYYY-M-D")
+        extend_request.save()
+    return redirect('home')

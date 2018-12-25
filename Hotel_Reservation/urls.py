@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
-    #url(r'^Customer/', include('Customer.urls')),
     url(r'^Request/', include('Request.urls')),
     url(r'^Owner/',include('Owner.urls')),
     url(r'^Customer/', include('Customer.urls')),
@@ -30,7 +29,7 @@ urlpatterns = [
     url(r'^Reservation/', include('Reservation.urls')),
     url(r'^Room/', include('Room.urls')),
     url(r'^Owner/', include('Owner.urls')),
-    # url(r'^Location/', include('Location.urls')),
+    path('', include('Main.urls')),
 ]
 
 if settings.DEBUG:

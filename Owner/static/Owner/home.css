@@ -1,0 +1,48 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+    background: white url("images/Pool.jpg") no-repeat;
+    background-size: 100% 100%;
+    color: white;
+}
+
+.header {
+  width: 60%;
+  margin: 50px auto 0px;
+  color: black;
+  background: rgb(95,158,160,0.4);
+   font-size: 40px;
+  text-align: center;
+ /* border: 1px solid #B0C4DE; */
+    border : none;
+  border-bottom: none;
+  border-radius: 0px 0px 0px 0px;
+  padding: 20px;
+}
+form, .content {
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px;
+  color: white;
+  border: 1px solid #B0C4DE;
+  background: rgba(0,0,0,0.4);
+  border-radius: 0px 0px 10px 10px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 40px;
+  color: black;
+  /*background: #5F9EA0; */
+  background: #269abc;
+
+  border: 1px solid #B0C4DE;
+  border-radius: 10px;
+  margin: 90px auto 0px;
+  float: right;
+  width: 100%
+
+}

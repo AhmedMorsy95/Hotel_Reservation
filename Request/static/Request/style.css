@@ -6,6 +6,7 @@
 body {
     background: white url("images/hotel.jpg") no-repeat;
     color: white;
+    width: 100%;
 }
 
 .header {

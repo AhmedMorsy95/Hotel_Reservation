@@ -1,8 +1,8 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'Customer/style.css' %}">
 {% block content %}
-    <h2>Login</h2>
-{#    {% if form.errors %}#}
-{#        <p style="color: red">Email of Password don't match</p>#}
-{#    {% endif %}#}
+    <h2 class="header">Login</h2>
+
     <form method="post">
         {% csrf_token %}
         {% for field in form %}
@@ -13,11 +13,11 @@
                     <p style="color: red">{{ error }}</p>
                 {% endfor %}
                 {% if field.help_text %}
-                    <small style="color: gray">{{ field.help_text }}</small>
+                    <small style="color: blue">{{ field.help_text }}</small>
                 {% endif %}
             </p>
         {% endfor %}
-        <button type="submit">Submit</button>
-        <a href="{% url 'signup2'  %}" style="color: gray">New? Sign up</a>
+        <button type="submit" class="btn">Submit</button>
+        <a href="{% url 'signup'  %}" style="color: blue">New? Sign up</a>
     </form>
 {% endblock %}

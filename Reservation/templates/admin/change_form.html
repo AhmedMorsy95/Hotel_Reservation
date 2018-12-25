@@ -1,0 +1,12 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+    <div class="submit-row">
+        <a href="{% url 'time_advance' %}" class=" w3-button w3-red w3-mobile"><i class="fa w3-margin-ce"></i>Test</a>
+    </div>
+    <div class="submit-row">
+        <a href="{% url 'Normal' %}" class=" w3-button w3-red w3-mobile"><i class="fa w3-margin-ce"></i>Normal</a>
+    </div>
+{% endblock %}
