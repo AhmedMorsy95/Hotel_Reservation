@@ -81,7 +81,6 @@ simplejson==3.13.2
 singledispatch==3.4.0.3
 six==1.12.0
 sqlparse==0.2.4
-system-service==0.3
 systemd-python==234
 termcolor==1.1.0
 textblob==0.15.2
