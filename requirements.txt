@@ -93,5 +93,4 @@ wadllib==1.3.2
 wcwidth==0.1.7
 websocket-client==0.54.0
 whitenoise==4.1.2
-xkit==0.0.0
 zope.interface==4.3.2
