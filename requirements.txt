@@ -3,7 +3,6 @@ asn1crypto==0.24.0
 awsebcli==3.14.8
 blessed==1.15.0
 botocore==1.12.71
-Brlapi==0.6.6
 cached-property==1.5.1
 cement==2.8.2
 certifi==2018.11.29
