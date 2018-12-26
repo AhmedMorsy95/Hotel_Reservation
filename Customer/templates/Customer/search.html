@@ -1,0 +1,5 @@
+              <form name="search" action="{% url 'home' %} " method="POST">
+                  {{search}}
+                  {% csrf_token %}
+                  <button type="submit">Filter</button>
+              </form>

@@ -29,6 +29,7 @@ urlpatterns = [
     path('show/', showHotels, name='showHotels'),
     re_path(r'^Room/', include('Room.urls')),
     re_path(r'^$', views.index, name='index'),
+    re_path(r'^search/$', views.search, name='search'),
     re_path(r'^home/$', views.home, name='home'),
     re_path(r'^reserve([0-9]+)/$', views.reserve, name='reserve'),
     re_path(r'^reserve_room([0-9]+)/$', views.reserve_room, name='reserve_room'),

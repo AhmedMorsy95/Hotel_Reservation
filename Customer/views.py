@@ -40,8 +40,6 @@ def index(request):
     return render(request,'Customer/index.html',{'form' : form,'username':name})
 
 def home(request):
-    print(fakeTime(20))
-
     all = hotel.objects.all()
     search = searchForm()
     if request.method == 'POST':
@@ -57,7 +55,8 @@ def home(request):
             starsfield = data.cleaned_data['stars']
             if starsfield:
                 all = all.filter(stars = starsfield)
-            return render(request, 'Customer/home.html', {'hotels': all})
+            name = User.objects.get(username=request.user.username)
+            return render(request, 'Customer/home.html', {'hotels': all, 'username':name})
     name = User.objects.get(username=request.user.username)
     return render(request,'Customer/home.html',{'hotels' : all, 'search' : search, 'username':name})
 
@@ -142,3 +141,6 @@ def confirm(request,reservation_id):
     return redirect('show_reservations')
 
 
+def search(request):
+    search = searchForm()
+    return render(request, 'Customer/search.html', {'search': search})
