@@ -87,7 +87,6 @@ textblob==0.15.2
 texttable==0.9.1
 times==0.7
 tzlocal==1.5.1
-ubuntu-drivers-common==0.0.0
 ufw==0.35
 unattended-upgrades==0.1
 urllib3==1.22
